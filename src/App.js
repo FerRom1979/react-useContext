@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import Profile from "./components/profile"
+import UserList from "./components/userList"
+import UserState from "./context/users/userState"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <UserState>
+      <div style={{ display: "flex" }}>
+        <div style={{ width: "70%" }}>
+          <UserList />
+        </div>
+        <div style={{ width: "30%" }}>
+          <Profile />
+        </div>
+      </div>
+    </UserState>
+  )
 }
 
-export default App;
+export default App
